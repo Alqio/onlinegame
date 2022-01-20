@@ -1,5 +1,6 @@
 import { Room, Client } from "colyseus";
 import { MainRoomState } from "./schema/MainRoomState";
+import {Player} from "./schema/Player";
 
 export class MainRoom extends Room<MainRoomState> {
 
@@ -17,6 +18,7 @@ export class MainRoom extends Room<MainRoomState> {
   }
 
   onJoin (client: Client, options: any) {
+    this.state.players.set(client.sessionId, new Player());
     console.log(client.sessionId, "joined!");
   }
 

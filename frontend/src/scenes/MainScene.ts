@@ -18,4 +18,9 @@ export class MainScene extends Phaser.Scene {
         const player = this.add.sprite(200, 200, 'player');
     }
 
+    update(time: number, delta: number) {
+        super.update(time, delta);
+
+    }
+
 }
